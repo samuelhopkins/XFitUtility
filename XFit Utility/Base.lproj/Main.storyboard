@@ -166,7 +166,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sVW-fX-nMi" customClass="GraphView" customModule="XFit_Utility" customModuleProvider="target">
-                                        <rect key="frame" x="21" y="95" width="278" height="329"/>
+                                        <rect key="frame" x="30" y="95" width="278" height="329"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dS6-Dq-eMx">
                                                 <rect key="frame" x="27" y="21" width="93" height="21"/>
@@ -180,8 +180,8 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCO-aw-BwV">
-                                                <rect key="frame" x="228" y="34" width="45" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCO-aw-BwV">
+                                                <rect key="frame" x="208" y="34" width="65" height="21"/>
                                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="19"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -245,13 +245,13 @@
                         <action selector="LiftSwipeLeft:" destination="N97-RK-u95" id="FmA-ad-jrH"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <tapGestureRecognizer id="t2n-7g-67A">
+                <tapGestureRecognizer numberOfTapsRequired="2" id="t2n-7g-67A">
                     <connections>
                         <action selector="lifterViewTapGesture:" destination="N97-RK-u95" id="AZK-Nx-EOc"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="726" y="-1201"/>
+            <point key="canvasLocation" x="665" y="-1225"/>
         </scene>
         <!--Item-->
         <scene sceneID="2Gb-f3-wG2">
@@ -292,7 +292,7 @@
                                     <action selector="Reset:" destination="ahX-52-o2t" eventType="touchUpInside" id="QZw-67-YJL"/>
                                 </connections>
                             </button>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="4Jr-8S-LXa">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" stepValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4Jr-8S-LXa">
                                 <rect key="frame" x="113" y="269" width="94" height="29"/>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -305,7 +305,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="0.75201231059999996" green="0.11557288759999999" blue="0.14327966680000001" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="3x1-Px-LWD">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" stepValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3x1-Px-LWD">
                                 <rect key="frame" x="111" y="381" width="94" height="29"/>
                                 <connections>
                                     <action selector="OffChange:" destination="ahX-52-o2t" eventType="valueChanged" id="ppi-Dr-Iup"/>

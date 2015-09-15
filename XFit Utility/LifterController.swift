@@ -15,6 +15,7 @@ class LifterController: UIViewController {
     var liftIndex = 0
     var pounds = 1.0
     var isGraphViewShowing = false
+    var labels :[UILabel] = []
     override func viewDidLoad() {
         
         LiftName.text = Lifts[liftIndex]
@@ -31,12 +32,40 @@ class LifterController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        if (isGraphViewShowing){
+        let touch = touches.first as! UITouch
+        let point = touch.locationInView(graphView)
+        for i in 0..<graphView.pointsArray.count {
+                var graphPoint = graphView.pointsArray[i]
+            if (point.x > graphPoint.x - 10) && (point.x < graphPoint.x + 10){
+                if !(labels.isEmpty){
+                    for weightLabel in labels{
+                        weightLabel.removeFromSuperview()
+                    }
+                }
+                println(graphView.samplePoints[i])
+                var label = UILabel(frame: CGRectMake(0, 0, 150, 21))
+                label.center = CGPointMake(graphPoint.x, graphPoint.y + 15)
+                label.textAlignment = NSTextAlignment.Center
+                label.textColor = UIColor.whiteColor()
+                label.font = UIFont(name: label.font.fontName, size: 15)
+                label.text = String(format: "%.2f", graphView.samplePoints[i] * pounds)
+                graphView.addSubview(label)
+                labels.append(label)
+            }
+            
+            }
+        }
+    }
+
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var graphView: GraphView!
     @IBOutlet weak var lifterView: LifterView!
@@ -230,6 +259,11 @@ class LifterController: UIViewController {
     }
     
     func setupGraphDisplay() {
+        if !(labels.isEmpty){
+            for label in labels{
+                label.removeFromSuperview()
+            }
+        }
         var lift = Lifts[liftIndex]
         println(lift)
         LiftName.text = lift

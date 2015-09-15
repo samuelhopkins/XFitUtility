@@ -14,7 +14,9 @@ import UIKit
     @IBInspectable var endColor: UIColor = UIColor.greenColor()
     
     var samplePoints :[Double] = [200.0,250.0,180.0,190.0]
+    var pointsArray :[CGPoint] = []
     override func drawRect(rect: CGRect) {
+        pointsArray = []
         let width = rect.width
         let height = rect.height
         
@@ -120,6 +122,7 @@ import UIKit
         //Draw the circles on top of graph stroke
         for i in 0..<samplePoints.count {
             var point = CGPoint(x:columnXPoint(i), y:columnYPoint(samplePoints[i]))
+            pointsArray.append(point)
             point.x -= 5.0/2
             point.y -= 5.0/2
             
