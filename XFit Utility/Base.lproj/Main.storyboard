@@ -38,16 +38,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gv9-T8-Cco" userLabel="Container View">
                                 <rect key="frame" x="0.0" y="0.0" width="321" height="519"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sVW-fX-nMi" customClass="GraphView" customModule="XFit_Utility" customModuleProvider="target">
-                                        <rect key="frame" x="21" y="95" width="278" height="329"/>
-                                        <color key="backgroundColor" red="1" green="0.94381842029999996" blue="0.23400093359999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="329" id="Yk4-lN-2TP"/>
-                                            <constraint firstAttribute="width" constant="278" id="mbx-eP-u8v"/>
-                                        </constraints>
-                                    </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DER-iy-2x9" customClass="LifterView" customModule="XFit_Utility" customModuleProvider="target">
-                                        <rect key="frame" x="18" y="81" width="283" height="402"/>
+                                        <rect key="frame" x="19" y="59" width="283" height="402"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="75%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oZB-Ti-w7y">
                                                 <rect key="frame" x="34" y="185" width="37" height="25"/>
@@ -173,6 +165,42 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
+                                    <view hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sVW-fX-nMi" customClass="GraphView" customModule="XFit_Utility" customModuleProvider="target">
+                                        <rect key="frame" x="21" y="95" width="278" height="329"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dS6-Dq-eMx">
+                                                <rect key="frame" x="27" y="21" width="93" height="21"/>
+                                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="19"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSq-sm-NPM">
+                                                <rect key="frame" x="246" y="270" width="27" height="21"/>
+                                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="19"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCO-aw-BwV">
+                                                <rect key="frame" x="228" y="34" width="45" height="21"/>
+                                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="19"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="329" id="Yk4-lN-2TP"/>
+                                            <constraint firstAttribute="width" constant="278" id="mbx-eP-u8v"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                                <color key="value" red="1" green="0.78873818126970674" blue="0.63405735344178438" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                                <color key="value" red="1" green="0.29460181164422439" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -201,6 +229,8 @@
                         <outlet property="containerView" destination="gv9-T8-Cco" id="Re1-xB-DlE"/>
                         <outlet property="graphView" destination="sVW-fX-nMi" id="9Az-b4-Pm2"/>
                         <outlet property="lifterView" destination="DER-iy-2x9" id="ESQ-PW-iyJ"/>
+                        <outlet property="maxPlottedLift" destination="nCO-aw-BwV" id="hDA-Cl-Pmr"/>
+                        <outlet property="plottedLift" destination="dS6-Dq-eMx" id="sKl-1f-Mtt"/>
                         <outlet property="unitsSegmentedControl" destination="52K-QN-W28" id="e28-fE-Gka"/>
                     </connections>
                 </viewController>
@@ -221,7 +251,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="517" y="-1210"/>
+            <point key="canvasLocation" x="726" y="-1201"/>
         </scene>
         <!--Item-->
         <scene sceneID="2Gb-f3-wG2">

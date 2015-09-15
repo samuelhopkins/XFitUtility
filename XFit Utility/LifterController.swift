@@ -47,6 +47,8 @@ class LifterController: UIViewController {
     @IBOutlet weak var Max75: UILabel!
     @IBOutlet weak var Max70: UILabel!
     @IBOutlet weak var Max60: UILabel!
+    @IBOutlet weak var plottedLift: UILabel!
+    @IBOutlet weak var maxPlottedLift: UILabel!
     
     @IBAction func LiftSwipeRight(sender: UISwipeGestureRecognizer) {
         var liftsSize = Lifts.count
@@ -212,6 +214,7 @@ class LifterController: UIViewController {
         } else {
             
             //show Graph
+            setupGraphDisplay()
             UIView.transitionFromView(lifterView,
                 toView: graphView,
                 duration: 1.0,
@@ -220,6 +223,26 @@ class LifterController: UIViewController {
                 completion: nil)
         }
         isGraphViewShowing = !isGraphViewShowing
+    }
+    
+    func scalerMultiplier(scaler: Double)(currentVal: Double) -> Double {
+        return Double(currentVal) * scaler
+    }
+    
+    func setupGraphDisplay() {
+        var lift = Lifts[liftIndex]
+        println(lift)
+        LiftName.text = lift
+        if let maxWeights = defaults.arrayForKey(lift) as? [Double]
+        {
+        graphView.samplePoints = maxWeights.map(scalerMultiplier(pounds))
+        graphView.setNeedsDisplay()
+        maxPlottedLift.text = String(format: "%.2f", maxElement(graphView.samplePoints))
+        plottedLift.text = "\(lift)"
+            
+        }
+
+        
     }
     
 }
