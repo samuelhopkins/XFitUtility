@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		F645B6BB1B8CE0DF0047F1B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F645B6BA1B8CE0DF0047F1B2 /* AppDelegate.swift */; };
-		F645B6BD1B8CE0DF0047F1B2 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F645B6BC1B8CE0DF0047F1B2 /* FirstViewController.swift */; };
+		F645B6BD1B8CE0DF0047F1B2 /* LifterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F645B6BC1B8CE0DF0047F1B2 /* LifterController.swift */; };
 		F645B6BF1B8CE0DF0047F1B2 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F645B6BE1B8CE0DF0047F1B2 /* SecondViewController.swift */; };
 		F645B6C21B8CE0DF0047F1B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F645B6C01B8CE0DF0047F1B2 /* Main.storyboard */; };
 		F645B6C41B8CE0DF0047F1B2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F645B6C31B8CE0DF0047F1B2 /* Images.xcassets */; };
 		F645B6C71B8CE0DF0047F1B2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F645B6C51B8CE0DF0047F1B2 /* LaunchScreen.xib */; };
 		F645B6D31B8CE0DF0047F1B2 /* XFit_UtilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F645B6D21B8CE0DF0047F1B2 /* XFit_UtilityTests.swift */; };
+		F645B6DD1B8CE1210047F1B2 /* StopWatchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F645B6DC1B8CE1210047F1B2 /* StopWatchController.swift */; };
+		F645B6DF1B8CE3C20047F1B2 /* Air Horn-SoundBible.com-964603082.wav in Resources */ = {isa = PBXBuildFile; fileRef = F645B6DE1B8CE3C20047F1B2 /* Air Horn-SoundBible.com-964603082.wav */; };
+		F6474F301B8EA360008BBED3 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6474F2F1B8EA360008BBED3 /* GraphView.swift */; };
+		F6474F321B8EAE34008BBED3 /* LifterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6474F311B8EAE34008BBED3 /* LifterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +34,7 @@
 		F645B6B51B8CE0DF0047F1B2 /* XFit Utility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "XFit Utility.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F645B6B91B8CE0DF0047F1B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F645B6BA1B8CE0DF0047F1B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F645B6BC1B8CE0DF0047F1B2 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		F645B6BC1B8CE0DF0047F1B2 /* LifterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifterController.swift; sourceTree = "<group>"; };
 		F645B6BE1B8CE0DF0047F1B2 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		F645B6C11B8CE0DF0047F1B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F645B6C31B8CE0DF0047F1B2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -38,6 +42,10 @@
 		F645B6CC1B8CE0DF0047F1B2 /* XFit UtilityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "XFit UtilityTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F645B6D11B8CE0DF0047F1B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F645B6D21B8CE0DF0047F1B2 /* XFit_UtilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XFit_UtilityTests.swift; sourceTree = "<group>"; };
+		F645B6DC1B8CE1210047F1B2 /* StopWatchController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; fileEncoding = 4; path = StopWatchController.swift; sourceTree = "<group>"; };
+		F645B6DE1B8CE3C20047F1B2 /* Air Horn-SoundBible.com-964603082.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Air Horn-SoundBible.com-964603082.wav"; sourceTree = "<group>"; };
+		F6474F2F1B8EA360008BBED3 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		F6474F311B8EAE34008BBED3 /* LifterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +87,11 @@
 		F645B6B71B8CE0DF0047F1B2 /* XFit Utility */ = {
 			isa = PBXGroup;
 			children = (
+				F6474F2F1B8EA360008BBED3 /* GraphView.swift */,
 				F645B6BA1B8CE0DF0047F1B2 /* AppDelegate.swift */,
-				F645B6BC1B8CE0DF0047F1B2 /* FirstViewController.swift */,
+				F645B6BC1B8CE0DF0047F1B2 /* LifterController.swift */,
+				F6474F311B8EAE34008BBED3 /* LifterView.swift */,
+				F645B6DC1B8CE1210047F1B2 /* StopWatchController.swift */,
 				F645B6BE1B8CE0DF0047F1B2 /* SecondViewController.swift */,
 				F645B6C01B8CE0DF0047F1B2 /* Main.storyboard */,
 				F645B6C31B8CE0DF0047F1B2 /* Images.xcassets */,
@@ -93,6 +104,7 @@
 		F645B6B81B8CE0DF0047F1B2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F645B6DE1B8CE3C20047F1B2 /* Air Horn-SoundBible.com-964603082.wav */,
 				F645B6B91B8CE0DF0047F1B2 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -195,6 +207,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F645B6DF1B8CE3C20047F1B2 /* Air Horn-SoundBible.com-964603082.wav in Resources */,
 				F645B6C21B8CE0DF0047F1B2 /* Main.storyboard in Resources */,
 				F645B6C71B8CE0DF0047F1B2 /* LaunchScreen.xib in Resources */,
 				F645B6C41B8CE0DF0047F1B2 /* Images.xcassets in Resources */,
@@ -215,9 +228,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6474F321B8EAE34008BBED3 /* LifterView.swift in Sources */,
+				F6474F301B8EA360008BBED3 /* GraphView.swift in Sources */,
 				F645B6BF1B8CE0DF0047F1B2 /* SecondViewController.swift in Sources */,
 				F645B6BB1B8CE0DF0047F1B2 /* AppDelegate.swift in Sources */,
-				F645B6BD1B8CE0DF0047F1B2 /* FirstViewController.swift in Sources */,
+				F645B6DD1B8CE1210047F1B2 /* StopWatchController.swift in Sources */,
+				F645B6BD1B8CE0DF0047F1B2 /* LifterController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +429,7 @@
 				F645B6D81B8CE0DF0047F1B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F645B6D91B8CE0DF0047F1B2 /* Build configuration list for PBXNativeTarget "XFit UtilityTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +438,7 @@
 				F645B6DB1B8CE0DF0047F1B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
