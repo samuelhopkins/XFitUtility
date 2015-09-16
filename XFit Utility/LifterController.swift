@@ -237,7 +237,7 @@ class LifterController: UIViewController {
             UIView.transitionFromView(graphView,
                 toView: lifterView,
                 duration: 1.0,
-                options: UIViewAnimationOptions.TransitionFlipFromLeft
+                options: UIViewAnimationOptions.TransitionFlipFromBottom
                     | UIViewAnimationOptions.ShowHideTransitionViews,
                 completion:nil)
         } else {
@@ -247,7 +247,7 @@ class LifterController: UIViewController {
             UIView.transitionFromView(lifterView,
                 toView: graphView,
                 duration: 1.0,
-                options: UIViewAnimationOptions.TransitionFlipFromRight
+                options: UIViewAnimationOptions.TransitionFlipFromTop
                     | UIViewAnimationOptions.ShowHideTransitionViews,
                 completion: nil)
         }

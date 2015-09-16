@@ -18,6 +18,7 @@
 		F645B6DF1B8CE3C20047F1B2 /* Air Horn-SoundBible.com-964603082.wav in Resources */ = {isa = PBXBuildFile; fileRef = F645B6DE1B8CE3C20047F1B2 /* Air Horn-SoundBible.com-964603082.wav */; };
 		F6474F301B8EA360008BBED3 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6474F2F1B8EA360008BBED3 /* GraphView.swift */; };
 		F6474F321B8EAE34008BBED3 /* LifterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6474F311B8EAE34008BBED3 /* LifterView.swift */; };
+		F69DBDDE1BA9443F002075C3 /* StartButtonClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69DBDDD1BA9443F002075C3 /* StartButtonClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		F645B6DE1B8CE3C20047F1B2 /* Air Horn-SoundBible.com-964603082.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Air Horn-SoundBible.com-964603082.wav"; sourceTree = "<group>"; };
 		F6474F2F1B8EA360008BBED3 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		F6474F311B8EAE34008BBED3 /* LifterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifterView.swift; sourceTree = "<group>"; };
+		F69DBDDD1BA9443F002075C3 /* StartButtonClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartButtonClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				F645B6BC1B8CE0DF0047F1B2 /* LifterController.swift */,
 				F6474F311B8EAE34008BBED3 /* LifterView.swift */,
 				F645B6DC1B8CE1210047F1B2 /* StopWatchController.swift */,
+				F69DBDDD1BA9443F002075C3 /* StartButtonClass.swift */,
 				F645B6BE1B8CE0DF0047F1B2 /* SecondViewController.swift */,
 				F645B6C01B8CE0DF0047F1B2 /* Main.storyboard */,
 				F645B6C31B8CE0DF0047F1B2 /* Images.xcassets */,
@@ -229,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6474F321B8EAE34008BBED3 /* LifterView.swift in Sources */,
+				F69DBDDE1BA9443F002075C3 /* StartButtonClass.swift in Sources */,
 				F6474F301B8EA360008BBED3 /* GraphView.swift in Sources */,
 				F645B6BF1B8CE0DF0047F1B2 /* SecondViewController.swift in Sources */,
 				F645B6BB1B8CE0DF0047F1B2 /* AppDelegate.swift in Sources */,

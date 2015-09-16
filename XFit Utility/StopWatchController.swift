@@ -44,23 +44,23 @@ class StopWatchController: UIViewController {
     @IBOutlet weak var OffLabel: UILabel!
     @IBOutlet weak var TimeOn: UILabel!
     
-    @IBOutlet weak var PlayButton: UIBarButtonItem!
-    @IBOutlet weak var PauseButton: UIBarButtonItem!
     
-    @IBOutlet weak var ResetButton: UIButton!
+    @IBOutlet weak var StartStop: StartButtonClass!
+    
     @IBOutlet weak var TimeOff: UILabel!
     
     var Timer:NSTimer = NSTimer()
     var started = false
     var offBool = false
-    var offDiff = 0
-    var Off = 0
+    var offDiff:Float = 0
+    var Off:Float = 0
     var MicroCounter = 0
     var SecondCounter = 0
-    var MinuteCounter = 0
-    var Interval = 0
+    var MinuteCounter : Float = 0
+    var Interval:Float = 0
     var MyRed = UIColor(red: 192/255, green: 29/255, blue: 27/255, alpha: 1.0)
-
+    var intervalTotal = 0
+    var offTotal = 0
     var url = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Air Horn-SoundBible.com-964603082", ofType: "wav")! )
     var audioPlayer = AVAudioPlayer()
     @IBAction func Reset(sender: AnyObject) {
@@ -72,19 +72,29 @@ class StopWatchController: UIViewController {
         Seconds.text=String(format: "%02d",SecondCounter)
         Minutes.text=String(format: "%02d",MinuteCounter)
         started = false
+        StartStop.setTitle("Start", forState: .Normal)
+        StartStop.isStop = false
     }
     
-    @IBAction func Start(sender: AnyObject) {
+    @IBAction func StartOrStop(sender: AnyObject) {
+        println(StartStop.isStop)
+        if (StartStop.isStop == false){
+        println(started)
         if (!started){
             TimeOn.textColor = MyRed
         Timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("UpdateTimer"), userInfo: nil, repeats: true)
         started = true
+            StartStop.isStop = true
+            StartStop.setTitle("Stop", forState: .Normal)
         }
-    }
-
-    @IBAction func Stop(sender: AnyObject) {
-        Timer.invalidate()
-        started = false
+        }
+        else{
+            Timer.invalidate()
+            started = false
+            StartStop.setTitle("Start", forState: .Normal)
+            StartStop.isStop = false
+ 
+        }
     }
     
     func UpdateTimer(){
@@ -94,35 +104,42 @@ class StopWatchController: UIViewController {
         {
             MicroCounter = 0
             Seconds.text = String(format: "%02d",++SecondCounter)
+        
            if(SecondCounter % 60 == 0)
            {
             SecondCounter=0
             Seconds.text=String(format: "%02d",SecondCounter)
-
-            Minutes.text=String(format: "%02d",++MinuteCounter)
+            println("Increment Minutes")
+            Minutes.text=String(format: "%02.0f",++MinuteCounter)
+            println(MinuteCounter)
             IntervalSound(MinuteCounter)
+            }
+            else if(SecondCounter % 30 == 0)
+           {
+            IntervalSound(MinuteCounter + 0.5)
             }
         }
         
     }
     
     @IBAction func StepperChange(sender: UIStepper) {
-        var sentVal = Int(sender.value)
-        IntervalLabel.text = sentVal.description
+        var sentVal = Float(sender.value)
+        println(sender.value)
+        IntervalLabel.text = String(format: "%.1f", sentVal)
         Interval = sentVal
     }
     
     @IBAction func OffChange(sender: UIStepper) {
-        var sent = Int(sender.value)
-        OffLabel.text = sent.description
+        var sent = Float(sender.value)
+        OffLabel.text = String(format: "%.1f", sent)
         Off = sent
     }
     
-    func IntervalSound(value: Int){
+    func IntervalSound(value: Float){
         if (offBool)
         {
-            
-            if (++offDiff == Off)
+            offDiff += 0.5
+            if (offDiff == Off)
             {
                 offDiff = 0
                 offBool = false
@@ -156,11 +173,9 @@ class StopWatchController: UIViewController {
         Micros.textColor = UIColor.blackColor()
         Seconds.textColor = UIColor.blackColor()
         Minutes.textColor = UIColor.blackColor()
-        PlayButton.tintColor = UIColor.blackColor()
-        PauseButton.tintColor = UIColor.blackColor()
         IntervalValue.tintColor = UIColor.blackColor()
         OffValue.tintColor = UIColor.blackColor()
-        ResetButton.tintColor = UIColor.blackColor()
+       
    
         }
         else {
@@ -170,12 +185,9 @@ class StopWatchController: UIViewController {
             Micros.textColor = MyRed
             Seconds.textColor = MyRed
             Minutes.textColor = MyRed
-            PlayButton.tintColor = MyRed
-            PauseButton.tintColor = MyRed
+            
             IntervalValue.tintColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1.0)
             OffValue.tintColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1.0)
-            ResetButton.tintColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1.0)
-
 
         }
     }

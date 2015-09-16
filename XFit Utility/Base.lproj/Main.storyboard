@@ -165,7 +165,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
-                                    <view hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sVW-fX-nMi" customClass="GraphView" customModule="XFit_Utility" customModuleProvider="target">
+                                    <view hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sVW-fX-nMi" customClass="GraphView" customModule="XFit_Utility" customModuleProvider="target">
                                         <rect key="frame" x="30" y="95" width="278" height="329"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dS6-Dq-eMx">
@@ -283,42 +283,33 @@
                                 <color key="textColor" red="0.75201231059999996" green="0.11557288759999999" blue="0.14327966680000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GMF-UA-TQr">
-                                <rect key="frame" x="140" y="429" width="40" height="30"/>
-                                <state key="normal" title="Reset">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="Reset:" destination="ahX-52-o2t" eventType="touchUpInside" id="QZw-67-YJL"/>
-                                </connections>
-                            </button>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" stepValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4Jr-8S-LXa">
-                                <rect key="frame" x="113" y="269" width="94" height="29"/>
+                                <rect key="frame" x="38" y="269" width="94" height="29"/>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="StepperChange:" destination="ahX-52-o2t" eventType="valueChanged" id="4yF-G5-I37"/>
                                 </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDw-IA-qar">
-                                <rect key="frame" x="139" y="226" width="42" height="29"/>
+                                <rect key="frame" x="53" y="230" width="65" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="0.75201231059999996" green="0.11557288759999999" blue="0.14327966680000001" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" stepValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3x1-Px-LWD">
-                                <rect key="frame" x="111" y="381" width="94" height="29"/>
+                                <rect key="frame" x="188" y="269" width="94" height="29"/>
                                 <connections>
                                     <action selector="OffChange:" destination="ahX-52-o2t" eventType="valueChanged" id="ppi-Dr-Iup"/>
                                 </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHc-qX-VDG">
-                                <rect key="frame" x="142" y="343" width="37" height="30"/>
+                                <rect key="frame" x="204" y="231" width="63" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time On" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEH-dm-7jC">
-                                <rect key="frame" x="130" y="197" width="65" height="21"/>
+                                <rect key="frame" x="55" y="201" width="65" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -329,14 +320,14 @@
                                 <color key="textColor" red="0.55588735410000001" green="0.57029153759999995" blue="0.75201231059999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=":" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kzH-kn-CuV">
-                                <rect key="frame" x="204" y="117" width="12" height="61"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kzH-kn-CuV">
+                                <rect key="frame" x="204" y="124" width="12" height="61"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" red="0.55588735410000001" green="0.57029153759999995" blue="0.75201231059999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time Off" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Bl-Fp-L0D">
-                                <rect key="frame" x="127" y="314" width="66" height="21"/>
+                                <rect key="frame" x="204" y="201" width="66" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -348,25 +339,28 @@
                                     <navigationItem title="CrossFit Counter" id="DJa-rh-fB7"/>
                                 </items>
                             </navigationBar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ykB-po-fSM">
-                                <rect key="frame" x="0.0" y="477" width="320" height="44"/>
-                                <items>
-                                    <barButtonItem title="Item" systemItem="play" id="KzZ-D5-aes">
-                                        <color key="tintColor" red="0.75201231059999996" green="0.11557288759999999" blue="0.14327966680000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <action selector="Start:" destination="ahX-52-o2t" id="eeS-oF-8yK"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem width="247" style="plain" systemItem="fixedSpace" id="o2A-C5-TEM"/>
-                                    <barButtonItem title="Item" systemItem="pause" id="ZT8-Pa-TIP">
-                                        <color key="tintColor" red="0.75201231059999996" green="0.11557288759999999" blue="0.14327966680000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <action selector="Stop:" destination="ahX-52-o2t" id="qfO-zg-lMF"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                                <color key="barTintColor" red="0.55588735410000001" green="0.57029153759999995" blue="0.75201231059999996" alpha="1" colorSpace="calibratedRGB"/>
-                            </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oA-JH-5Y3" customClass="StartButtonClass" customModule="XFit_Utility" customModuleProvider="target">
+                                <rect key="frame" x="57" y="322" width="60" height="60"/>
+                                <state key="normal" title="Start"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isStop" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="StartOrStop:" destination="ahX-52-o2t" eventType="touchUpInside" id="9Ur-pc-Ua2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLp-Vc-KGQ" customClass="StartButtonClass" customModule="XFit_Utility" customModuleProvider="target">
+                                <rect key="frame" x="207" y="322" width="60" height="60"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isReset" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="Reset:" destination="ahX-52-o2t" eventType="touchUpInside" id="ECW-sn-rnF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -379,17 +373,15 @@
                         <outlet property="Minutes" destination="Otn-vK-QrV" id="ndu-CX-igm"/>
                         <outlet property="OffLabel" destination="dHc-qX-VDG" id="nqb-5t-100"/>
                         <outlet property="OffValue" destination="3x1-Px-LWD" id="Bbk-4a-FY2"/>
-                        <outlet property="PauseButton" destination="ZT8-Pa-TIP" id="1Ak-Sn-Zvd"/>
-                        <outlet property="PlayButton" destination="KzZ-D5-aes" id="uwm-Sd-Pos"/>
-                        <outlet property="ResetButton" destination="GMF-UA-TQr" id="dJ8-o7-07a"/>
                         <outlet property="Seconds" destination="A5e-Aj-mu7" id="urL-JR-hWp"/>
+                        <outlet property="StartStop" destination="2oA-JH-5Y3" id="GyV-N2-fEI"/>
                         <outlet property="TimeOff" destination="5Bl-Fp-L0D" id="tBH-aw-Okb"/>
                         <outlet property="TimeOn" destination="bEH-dm-7jC" id="y47-kC-QxS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VQL-74-9w7" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="712" y="-879"/>
+            <point key="canvasLocation" x="691" y="-1210"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
