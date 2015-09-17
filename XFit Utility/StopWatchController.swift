@@ -47,11 +47,14 @@ class StopWatchController: UIViewController {
     
     @IBOutlet weak var StartStop: StartButtonClass!
     
+    @IBOutlet weak var TabataButton: StartButtonClass!
     @IBOutlet weak var TimeOff: UILabel!
     
     var Timer:NSTimer = NSTimer()
     var started = false
     var offBool = false
+    var tabata = false
+    var tenCount = true
     var offDiff:Float = 0
     var Off:Float = 0
     var MicroCounter = 0
@@ -79,7 +82,6 @@ class StopWatchController: UIViewController {
     @IBAction func StartOrStop(sender: AnyObject) {
         println(StartStop.isStop)
         if (StartStop.isStop == false){
-        println(started)
         if (!started){
             TimeOn.textColor = MyRed
         Timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("UpdateTimer"), userInfo: nil, repeats: true)
@@ -91,18 +93,59 @@ class StopWatchController: UIViewController {
         else{
             Timer.invalidate()
             started = false
+            tabata = false
             StartStop.setTitle("Start", forState: .Normal)
             StartStop.isStop = false
  
         }
     }
     
+    
+    @IBAction func StartTabata(sender: StartButtonClass) {
+        if !(started || tabata){
+        tabata = true
+        Timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("UpdateTimer"), userInfo: nil, repeats: true)
+        started = true
+        StartStop.isStop = true
+        StartStop.setTitle("Stop", forState: .Normal)
+        }
+    }
+    
+    
     func UpdateTimer(){
-        MicroCounter+=1
-        Micros.text = String(format: "%02d",MicroCounter)
-        if (MicroCounter % 99 == 0)
+        if (tabata){
+            println(MicroCounter)
+            if (MicroCounter % 99 == 0) && (MicroCounter != 0){
+                println("Increment Second")
+                MicroCounter = 0
+                 Micros.text = String(format: "%02d",MicroCounter)
+                 Seconds.text = String(format: "%02d",++SecondCounter)
+                if (tenCount){
+                if(SecondCounter % 10 == 0){
+                    tenCount = false
+                    SecondCounter = 0
+                    Seconds.text=String(format: "%02d",SecondCounter)
+                    TabataIntervalSound()
+                }
+                }
+                else if(SecondCounter % 20 == 0){
+                SecondCounter = 0
+                tenCount = true
+                Seconds.text=String(format: "%02d",SecondCounter)
+                TabataIntervalSound()
+                }
+            }
+            else {
+                println("Increment micro")
+                 MicroCounter+=1
+                 Micros.text = String(format: "%02d",MicroCounter)
+            }
+        }
+        else{
+        if (MicroCounter % 99 == 0) && (MicroCounter != 0)
         {
             MicroCounter = 0
+             Micros.text = String(format: "%02d",MicroCounter)
             Seconds.text = String(format: "%02d",++SecondCounter)
         
            if(SecondCounter % 60 == 0)
@@ -118,8 +161,12 @@ class StopWatchController: UIViewController {
            {
             IntervalSound(MinuteCounter + 0.5)
             }
+            }
+        else{
+            MicroCounter+=1
+            Micros.text = String(format: "%02d",MicroCounter)
+            }
         }
-        
     }
     
     @IBAction func StepperChange(sender: UIStepper) {
@@ -133,6 +180,19 @@ class StopWatchController: UIViewController {
         var sent = Float(sender.value)
         OffLabel.text = String(format: "%.1f", sent)
         Off = sent
+    }
+    
+    func TabataIntervalSound(){
+        if (tenCount){
+            audioPlayer = AVAudioPlayer(contentsOfURL: url, error: nil)
+            audioPlayer.play()
+            AudioServicesPlayAlertSound(1023)
+        }
+        else{
+            audioPlayer = AVAudioPlayer(contentsOfURL: url, error: nil)
+            audioPlayer.play()
+            AudioServicesPlayAlertSound(1023)
+        }
     }
     
     func IntervalSound(value: Float){

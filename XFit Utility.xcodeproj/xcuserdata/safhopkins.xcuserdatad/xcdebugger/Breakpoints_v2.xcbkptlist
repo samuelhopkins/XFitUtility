@@ -26,12 +26,12 @@
                   moduleName = "XFit Utility"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/safhopkins/iOS/XFit%20Utility/XFit%20Utility/AppDelegate.swift"
-                  timestampString = "462218419.688946"
+                  timestampString = "464201251.062119"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
+                  offsetFromSymbolStart = "19">
                </Location>
                <Location
                   shouldBeEnabled = "No"
@@ -41,12 +41,12 @@
                   moduleName = "XFit Utility"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/safhopkins/iOS/XFit%20Utility/XFit%20Utility/AppDelegate.swift"
-                  timestampString = "462218419.691346"
+                  timestampString = "464201251.062423"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "12"
                   endingLineNumber = "12"
-                  offsetFromSymbolStart = "24">
+                  offsetFromSymbolStart = "35">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XFit Utility/StopWatchController.swift"
-            timestampString = "464079785.626362"
+            timestampString = "464192430.3504"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
             landmarkName = "StopWatchController"
             landmarkType = "3">
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "1"
             continueAfterRunningActions = "No"
             filePath = "XFit Utility/StopWatchController.swift"
-            timestampString = "464079785.626362"
+            timestampString = "464192430.3504"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
             landmarkName = "UpdateTimer()"
             landmarkType = "5">
             <Actions>
@@ -161,11 +161,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XFit Utility/StopWatchController.swift"
-            timestampString = "464079785.626362"
+            timestampString = "464192430.3504"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
             landmarkName = "ChangeColors()"
             landmarkType = "5">
          </BreakpointContent>
