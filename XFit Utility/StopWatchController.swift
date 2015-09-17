@@ -80,7 +80,7 @@ class StopWatchController: UIViewController {
     }
     
     @IBAction func StartOrStop(sender: AnyObject) {
-        println(StartStop.isStop)
+        print(StartStop.isStop)
         if (StartStop.isStop == false){
         if (!started){
             TimeOn.textColor = MyRed
@@ -114,9 +114,7 @@ class StopWatchController: UIViewController {
     
     func UpdateTimer(){
         if (tabata){
-            println(MicroCounter)
             if (MicroCounter % 99 == 0) && (MicroCounter != 0){
-                println("Increment Second")
                 MicroCounter = 0
                  Micros.text = String(format: "%02d",MicroCounter)
                  Seconds.text = String(format: "%02d",++SecondCounter)
@@ -136,7 +134,7 @@ class StopWatchController: UIViewController {
                 }
             }
             else {
-                println("Increment micro")
+                
                  MicroCounter+=1
                  Micros.text = String(format: "%02d",MicroCounter)
             }
@@ -152,9 +150,9 @@ class StopWatchController: UIViewController {
            {
             SecondCounter=0
             Seconds.text=String(format: "%02d",SecondCounter)
-            println("Increment Minutes")
+            
             Minutes.text=String(format: "%02.0f",++MinuteCounter)
-            println(MinuteCounter)
+           
             IntervalSound(MinuteCounter)
             }
             else if(SecondCounter % 30 == 0)
@@ -170,29 +168,24 @@ class StopWatchController: UIViewController {
     }
     
     @IBAction func StepperChange(sender: UIStepper) {
-        var sentVal = Float(sender.value)
-        println(sender.value)
+        let sentVal = Float(sender.value)
         IntervalLabel.text = String(format: "%.1f", sentVal)
         Interval = sentVal
     }
     
     @IBAction func OffChange(sender: UIStepper) {
-        var sent = Float(sender.value)
+        let sent = Float(sender.value)
         OffLabel.text = String(format: "%.1f", sent)
         Off = sent
     }
     
     func TabataIntervalSound(){
         if (tenCount){
-            audioPlayer = AVAudioPlayer(contentsOfURL: url, error: nil)
-            audioPlayer.play()
             AudioServicesPlayAlertSound(1023)
-        }
+                   }
         else{
-            audioPlayer = AVAudioPlayer(contentsOfURL: url, error: nil)
-            audioPlayer.play()
             AudioServicesPlayAlertSound(1023)
-        }
+                   }
     }
     
     func IntervalSound(value: Float){
@@ -203,20 +196,18 @@ class StopWatchController: UIViewController {
             {
                 offDiff = 0
                 offBool = false
-                audioPlayer = AVAudioPlayer(contentsOfURL: url, error: nil)
-                audioPlayer.play()
+                
                 AudioServicesPlayAlertSound(1023)
                 ChangeColors()
-        }
+                        }
         }
         
         else if (Interval > 0)
         {
             if (value % Interval == 0)
             {
-            audioPlayer = AVAudioPlayer(contentsOfURL: url, error: nil)
-            audioPlayer.play()
-            AudioServicesPlayAlertSound(1023)
+        AudioServicesPlayAlertSound(1023)
+               
             if (Off > 0){
                 offBool = true
                 ChangeColors()

@@ -16,6 +16,7 @@ class LifterController: UIViewController {
     var pounds = 1.0
     var isGraphViewShowing = false
     var labels :[UILabel] = []
+    
     override func viewDidLoad() {
         
         LiftName.text = Lifts[liftIndex]
@@ -39,20 +40,20 @@ class LifterController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if (isGraphViewShowing){
-        let touch = touches.first as! UITouch
+        let touch = touches.first as UITouch!
         let point = touch.locationInView(graphView)
         for i in 0..<graphView.pointsArray.count {
-                var graphPoint = graphView.pointsArray[i]
+                let graphPoint = graphView.pointsArray[i]
             if (point.x > graphPoint.x - 10) && (point.x < graphPoint.x + 10){
                 if !(labels.isEmpty){
                     for weightLabel in labels{
                         weightLabel.removeFromSuperview()
                     }
                 }
-                println(graphView.samplePoints[i])
-                var label = UILabel(frame: CGRectMake(0, 0, 150, 21))
+                print(graphView.samplePoints[i])
+                let label = UILabel(frame: CGRectMake(0, 0, 150, 21))
                 label.center = CGPointMake(graphPoint.x, graphPoint.y + 15)
                 label.textAlignment = NSTextAlignment.Center
                 label.textColor = UIColor.whiteColor()
@@ -67,8 +68,8 @@ class LifterController: UIViewController {
     }
 
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var graphView: GraphView!
-    @IBOutlet weak var lifterView: LifterView!
+    @IBOutlet var graphView: GraphView!
+    @IBOutlet var lifterView: LifterView!
     @IBOutlet weak var LiftName: UITextField!
     @IBOutlet weak var MaxLift: UITextField!
     @IBOutlet weak var Max95: UILabel!
@@ -80,7 +81,7 @@ class LifterController: UIViewController {
     @IBOutlet weak var maxPlottedLift: UILabel!
     
     @IBAction func LiftSwipeRight(sender: UISwipeGestureRecognizer) {
-        var liftsSize = Lifts.count
+        let liftsSize = Lifts.count
         if (liftIndex < liftsSize - 1)
         {
             liftIndex++
@@ -96,7 +97,7 @@ class LifterController: UIViewController {
     }
     
     @IBAction func LiftSwipeLeft(sender: UISwipeGestureRecognizer) {
-        var liftsSize = Lifts.count
+        let liftsSize = Lifts.count
         if (liftIndex > 0)
         {
             liftIndex--
@@ -113,12 +114,13 @@ class LifterController: UIViewController {
     }
     
     @IBAction func NewMax(sender: UIButton) {
-        var weight = NSNumberFormatter().numberFromString(MaxLift.text)!.doubleValue
-        var currentLift = Lifts[liftIndex]
-        println(currentLift)
+        self.view.endEditing(true)
+        let weight = NSNumberFormatter().numberFromString(MaxLift.text!)!.doubleValue
+        let currentLift = Lifts[liftIndex]
+        print(currentLift)
         var maxArray = defaults.objectForKey(currentLift) as? [Double] ?? [Double]()
         if (maxArray.count > 0){
-            var prevMax = maxArray[maxArray.count - 1]
+            let prevMax = maxArray[maxArray.count - 1]
             if (weight > prevMax){
             
                 maxArray.append(weight)
@@ -133,14 +135,15 @@ class LifterController: UIViewController {
     
     
     func DisplayPercentages(scaler :Double){
-        var lift = Lifts[liftIndex]
-        println(lift)
+        let lift = Lifts[liftIndex]
+        print(lift)
         LiftName.text = lift
         if let maxWeights = defaults.arrayForKey(lift) as? [Double]
         {
             if (maxWeights.count > 0){
-            println(maxWeights)
-            var maxWeight = maxWeights[maxWeights.count - 1]
+            print("Before Max Weights")
+            print(maxWeights)
+            let maxWeight = maxWeights[maxWeights.count - 1]
             MaxLift.text = String(format: "%.2f", maxWeight*1.0*scaler)
             Max95.text = String(format: "%.2f", maxWeight*0.95*scaler)
             Max85.text = String(format: "%.2f", maxWeight*0.85*scaler)
@@ -197,12 +200,11 @@ class LifterController: UIViewController {
     }
     
     @IBAction func NewLiftButton(sender: UIButton) {
-        var newLift = LiftName.text
-        if !(contains(Lifts,newLift)){
-        Lifts.append(LiftName.text)
+        let newLift = LiftName.text
+        if !(Lifts.contains(newLift!)){
+        Lifts.append(LiftName.text!)
         liftIndex = Lifts.count - 1
         DisplayPercentages(pounds)
-        println(Lifts)
         }
 
     }
@@ -217,8 +219,8 @@ class LifterController: UIViewController {
     }
     
     @IBAction func UndoNewMax(sender: UIButton) {
-        var lift = Lifts[liftIndex]
-        println(lift)
+        let lift = Lifts[liftIndex]
+       
         LiftName.text = lift
         if let maxWeights = defaults.arrayForKey(lift) as? [Double]
         {
@@ -231,14 +233,12 @@ class LifterController: UIViewController {
     }
     
     @IBAction func lifterViewTapGesture(gesture:UITapGestureRecognizer?) {
+        print(isGraphViewShowing)
         if (isGraphViewShowing) {
-            
-            //hide Graph
-            UIView.transitionFromView(graphView,
+                UIView.transitionFromView(graphView,
                 toView: lifterView,
                 duration: 1.0,
-                options: UIViewAnimationOptions.TransitionFlipFromBottom
-                    | UIViewAnimationOptions.ShowHideTransitionViews,
+                options: UIViewAnimationOptions.TransitionFlipFromBottom.union(UIViewAnimationOptions.ShowHideTransitionViews),
                 completion:nil)
         } else {
             
@@ -247,9 +247,9 @@ class LifterController: UIViewController {
             UIView.transitionFromView(lifterView,
                 toView: graphView,
                 duration: 1.0,
-                options: UIViewAnimationOptions.TransitionFlipFromTop
-                    | UIViewAnimationOptions.ShowHideTransitionViews,
+                options: UIViewAnimationOptions.TransitionFlipFromTop.union(UIViewAnimationOptions.ShowHideTransitionViews),
                 completion: nil)
+            print("transitioned to graph view")
         }
         isGraphViewShowing = !isGraphViewShowing
     }
@@ -264,14 +264,13 @@ class LifterController: UIViewController {
                 label.removeFromSuperview()
             }
         }
-        var lift = Lifts[liftIndex]
-        println(lift)
+        let lift = Lifts[liftIndex]
         LiftName.text = lift
         if let maxWeights = defaults.arrayForKey(lift) as? [Double]
         {
         graphView.samplePoints = maxWeights.map(scalerMultiplier(pounds))
         graphView.setNeedsDisplay()
-        maxPlottedLift.text = String(format: "%.2f", maxElement(graphView.samplePoints))
+        maxPlottedLift.text = String(format: "%.2f", graphView.samplePoints.maxElement()!)
         plottedLift.text = "\(lift)"
             
         }
