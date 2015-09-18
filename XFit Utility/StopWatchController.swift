@@ -50,6 +50,10 @@ class StopWatchController: UIViewController {
     @IBOutlet weak var TabataButton: StartButtonClass!
     @IBOutlet weak var TimeOff: UILabel!
     
+    @IBOutlet weak var TimeView: UIView!
+    @IBOutlet weak var StepperView: UIView!
+    @IBOutlet weak var ButtonView: UIView!
+    
     var Timer:NSTimer = NSTimer()
     var started = false
     var offBool = false
@@ -64,8 +68,8 @@ class StopWatchController: UIViewController {
     var MyRed = UIColor(red: 192/255, green: 29/255, blue: 27/255, alpha: 1.0)
     var intervalTotal = 0
     var offTotal = 0
-    var url = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("Air Horn-SoundBible.com-964603082", ofType: "wav")! )
-    var audioPlayer = AVAudioPlayer()
+    let myBlue = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1.0)
+    let myDarkerBlue = UIColor(red: 150/255, green: 122/255, blue: 255/255, alpha: 1.0)
     @IBAction func Reset(sender: AnyObject) {
         Timer.invalidate()
         MicroCounter=0
@@ -77,13 +81,14 @@ class StopWatchController: UIViewController {
         started = false
         StartStop.setTitle("Start", forState: .Normal)
         StartStop.isStop = false
+        TimeOn.textColor = UIColor.whiteColor()
     }
     
     @IBAction func StartOrStop(sender: AnyObject) {
         print(StartStop.isStop)
         if (StartStop.isStop == false){
         if (!started){
-            TimeOn.textColor = MyRed
+            TimeOn.textColor = myBlue
         Timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("UpdateTimer"), userInfo: nil, repeats: true)
         started = true
             StartStop.isStop = true
@@ -104,6 +109,7 @@ class StopWatchController: UIViewController {
     @IBAction func StartTabata(sender: StartButtonClass) {
         if !(started || tabata){
         tabata = true
+        TimeOn.textColor = UIColor.whiteColor()
         Timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("UpdateTimer"), userInfo: nil, repeats: true)
         started = true
         StartStop.isStop = true
@@ -169,22 +175,46 @@ class StopWatchController: UIViewController {
     
     @IBAction func StepperChange(sender: UIStepper) {
         let sentVal = Float(sender.value)
-        IntervalLabel.text = String(format: "%.1f", sentVal)
+        IntervalLabel.text = String(format: "%.1f", sentVal) + "min"
         Interval = sentVal
     }
     
     @IBAction func OffChange(sender: UIStepper) {
         let sent = Float(sender.value)
-        OffLabel.text = String(format: "%.1f", sent)
+        OffLabel.text = String(format: "%.1f", sent) + "min"
         Off = sent
     }
     
     func TabataIntervalSound(){
         if (tenCount){
             AudioServicesPlayAlertSound(1023)
+            TimeOff.textColor = myDarkerBlue
+            TimeOn.textColor = UIColor.whiteColor()
+            self.view.backgroundColor = MyRed
+            Micros.textColor = UIColor.blackColor()
+            Seconds.textColor = UIColor.blackColor()
+            Minutes.textColor = UIColor.blackColor()
+            IntervalValue.tintColor = UIColor.blackColor()
+            OffValue.tintColor = UIColor.blackColor()
+            StepperView.backgroundColor = MyRed
+            TimeView.backgroundColor = MyRed
+            ButtonView.backgroundColor = MyRed
+
                    }
         else{
             AudioServicesPlayAlertSound(1023)
+            TimeOff.textColor = UIColor.whiteColor()
+            TimeOn.textColor = myBlue
+            self.view.backgroundColor = UIColor.blackColor()
+            Micros.textColor = MyRed
+            Seconds.textColor = MyRed
+            Minutes.textColor = MyRed
+            
+            IntervalValue.tintColor = myBlue
+            OffValue.tintColor = myBlue
+            StepperView.backgroundColor = UIColor.blackColor()
+            TimeView.backgroundColor = UIColor.blackColor()
+            ButtonView.backgroundColor = UIColor.blackColor()
                    }
     }
     
@@ -218,7 +248,7 @@ class StopWatchController: UIViewController {
     
     func ChangeColors(){
         if (offBool){
-            TimeOff.textColor = UIColor.blackColor()
+            TimeOff.textColor = myDarkerBlue
             TimeOn.textColor = UIColor.whiteColor()
         self.view.backgroundColor = MyRed
         Micros.textColor = UIColor.blackColor()
@@ -226,19 +256,24 @@ class StopWatchController: UIViewController {
         Minutes.textColor = UIColor.blackColor()
         IntervalValue.tintColor = UIColor.blackColor()
         OffValue.tintColor = UIColor.blackColor()
-       
+        StepperView.backgroundColor = MyRed
+        TimeView.backgroundColor = MyRed
+        ButtonView.backgroundColor = MyRed
    
         }
         else {
             TimeOff.textColor = UIColor.whiteColor()
-            TimeOn.textColor = MyRed
+            TimeOn.textColor = myBlue
             self.view.backgroundColor = UIColor.blackColor()
             Micros.textColor = MyRed
             Seconds.textColor = MyRed
             Minutes.textColor = MyRed
             
-            IntervalValue.tintColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1.0)
-            OffValue.tintColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1.0)
+            IntervalValue.tintColor = myBlue
+            OffValue.tintColor = myBlue
+            StepperView.backgroundColor = UIColor.blackColor()
+            TimeView.backgroundColor = UIColor.blackColor()
+            ButtonView.backgroundColor = UIColor.blackColor()
 
         }
     }

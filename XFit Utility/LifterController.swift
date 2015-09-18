@@ -8,8 +8,7 @@
 
 import UIKit
 
-class LifterController: UIViewController {
-
+class LifterController: UIViewController, UITextFieldDelegate  {
     let defaults = NSUserDefaults.standardUserDefaults()
     var Lifts : [String] = ["Clean","Squat","Deadlift","Bench"]
     var liftIndex = 0
@@ -18,7 +17,8 @@ class LifterController: UIViewController {
     var labels :[UILabel] = []
     
     override func viewDidLoad() {
-        
+        self.LiftName.delegate = self;
+        self.MaxLift.delegate = self
         LiftName.text = Lifts[liftIndex]
         LiftName.userInteractionEnabled = true
         if let currentLiftIndex = defaults.objectForKey("currentLift") as? Int
@@ -41,6 +41,8 @@ class LifterController: UIViewController {
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        LiftName.resignFirstResponder()
+        MaxLift.resignFirstResponder()
         if (isGraphViewShowing){
         let touch = touches.first as UITouch!
         let point = touch.locationInView(graphView)
@@ -54,10 +56,10 @@ class LifterController: UIViewController {
                 }
                 print(graphView.samplePoints[i])
                 let label = UILabel(frame: CGRectMake(0, 0, 150, 21))
-                label.center = CGPointMake(graphPoint.x, graphPoint.y + 15)
+                label.center = CGPointMake(graphPoint.x + 20, graphPoint.y + 20)
                 label.textAlignment = NSTextAlignment.Center
-                label.textColor = UIColor.whiteColor()
-                label.font = UIFont(name: label.font.fontName, size: 15)
+                label.textColor = UIColor.blackColor()
+                label.font = UIFont(name: "Kailasa", size: 20)
                 label.text = String(format: "%.2f", graphView.samplePoints[i] * pounds)
                 graphView.addSubview(label)
                 labels.append(label)
@@ -72,12 +74,17 @@ class LifterController: UIViewController {
     @IBOutlet var lifterView: LifterView!
     @IBOutlet weak var LiftName: UITextField!
     @IBOutlet weak var MaxLift: UITextField!
+    
+    @IBAction func resignKeyBoard(sender: AnyObject) {
+        sender.resignFirstResponder()
+    }
+    
     @IBOutlet weak var Max95: UILabel!
     @IBOutlet weak var Max85: UILabel!
     @IBOutlet weak var Max75: UILabel!
-    @IBOutlet weak var Max70: UILabel!
-    @IBOutlet weak var Max60: UILabel!
-    @IBOutlet weak var plottedLift: UILabel!
+    @IBOutlet weak var Max65: UILabel!
+    @IBOutlet weak var Max55: UILabel!
+        @IBOutlet weak var plottedLift: UILabel!
     @IBOutlet weak var maxPlottedLift: UILabel!
     
     @IBAction func LiftSwipeRight(sender: UISwipeGestureRecognizer) {
@@ -150,9 +157,9 @@ class LifterController: UIViewController {
 
             Max75.text = String(format: "%.2f", maxWeight*0.75*scaler)
 
-            Max70.text = String(format: "%.2f", maxWeight*0.70*scaler)
+            Max65.text = String(format: "%.2f", maxWeight*0.65*scaler)
 
-            Max60.text = String(format: "%.2f", maxWeight*0.60*scaler)
+            Max55.text = String(format: "%.2f", maxWeight*0.55*scaler)
             }
             else{
                 
@@ -162,9 +169,9 @@ class LifterController: UIViewController {
                 
                 Max75.text = String(format: "%.2f", 0.00)
                 
-                Max70.text = String(format: "%.2f", 0.00)
+                Max65.text = String(format: "%.2f", 0.00)
                 
-                Max60.text = String(format: "%.2f", 0.00)
+                Max55.text = String(format: "%.2f", 0.00)
             }
 
         }
@@ -176,9 +183,9 @@ class LifterController: UIViewController {
             
             Max75.text = String(format: "%.2f", 0.00)
             
-            Max70.text = String(format: "%.2f", 0.00)
+            Max65.text = String(format: "%.2f", 0.00)
             
-            Max60.text = String(format: "%.2f", 0.00)
+            Max55.text = String(format: "%.2f", 0.00)
         }
 
         
@@ -235,13 +242,16 @@ class LifterController: UIViewController {
     @IBAction func lifterViewTapGesture(gesture:UITapGestureRecognizer?) {
         print(isGraphViewShowing)
         if (isGraphViewShowing) {
+                self.view.backgroundColor = UIColor.whiteColor()
+                containerView.backgroundColor = UIColor.whiteColor()
                 UIView.transitionFromView(graphView,
                 toView: lifterView,
                 duration: 1.0,
                 options: UIViewAnimationOptions.TransitionFlipFromBottom.union(UIViewAnimationOptions.ShowHideTransitionViews),
                 completion:nil)
         } else {
-            
+            self.view.backgroundColor = UIColor.blackColor()
+            containerView.backgroundColor = UIColor.blackColor()
             //show Graph
             setupGraphDisplay()
             UIView.transitionFromView(lifterView,

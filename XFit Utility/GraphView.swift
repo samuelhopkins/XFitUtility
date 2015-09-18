@@ -10,8 +10,9 @@ import UIKit
 @IBDesignable class GraphView: UIView{
     
     //1 - the properties for the gradient
-    @IBInspectable var startColor: UIColor = UIColor.redColor()
-    @IBInspectable var endColor: UIColor = UIColor.greenColor()
+    @IBInspectable var startColor: UIColor = UIColor.blueColor()
+    @IBInspectable var middleColor: UIColor = UIColor.blackColor()
+    @IBInspectable var endColor: UIColor = UIColor.blueColor()
     
     var samplePoints :[Double] = []
     var pointsArray :[CGPoint] = []
@@ -28,7 +29,7 @@ import UIKit
         
         //2 - get the current context
         let context = UIGraphicsGetCurrentContext()
-        let colors = [startColor.CGColor, endColor.CGColor]
+        let colors = [startColor.CGColor, middleColor.CGColor, endColor.CGColor]
         
         //3 - set up the color space
         let colorSpace = CGColorSpaceCreateDeviceRGB()
@@ -50,7 +51,7 @@ import UIKit
             endPoint,
             CGGradientDrawingOptions(rawValue: 0))
         
-        let margin:CGFloat = 20.0
+        let margin:CGFloat = 25.0
         if !(samplePoints.isEmpty){
             
         let columnXPoint = { (column:Int) -> CGFloat in
@@ -73,8 +74,8 @@ import UIKit
         
         // draw the line graph
         
-        UIColor.whiteColor().setFill()
-        UIColor.whiteColor().setStroke()
+        UIColor.blackColor().setFill()
+        UIColor.blackColor().setStroke()
         
         //set up the points line
         let graphPath = UIBezierPath()
@@ -153,7 +154,7 @@ import UIKit
             y:height - bottomBorder))
         linePath.addLineToPoint(CGPoint(x:width - margin,
             y:height - bottomBorder))
-        let color = UIColor(white: 1.0, alpha: 0.3)
+        let color = UIColor.blackColor().colorWithAlphaComponent(0.3)
         color.setStroke()
         
         linePath.lineWidth = 1.0

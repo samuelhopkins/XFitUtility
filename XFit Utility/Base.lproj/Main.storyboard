@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="-71.25" y="-758.45070422535207"/>
         </scene>
-        <!--Item-->
+        <!--Lifting-->
         <scene sceneID="xUF-qA-GN6">
             <objects>
                 <viewController id="N97-RK-u95" customClass="LifterController" customModule="XFit_Utility" customModuleProvider="target" sceneMemberID="viewController">
@@ -36,73 +36,83 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gv9-T8-Cco" userLabel="Container View">
-                                <rect key="frame" x="0.0" y="0.0" width="601" height="516"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gv9-T8-Cco" userLabel="Container View">
+                                <rect key="frame" x="0.0" y="0.0" width="601" height="498"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DER-iy-2x9" customClass="LifterView" customModule="XFit_Utility" customModuleProvider="target">
-                                        <rect key="frame" x="159" y="57" width="283" height="402"/>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DER-iy-2x9" customClass="LifterView" customModule="XFit_Utility" customModuleProvider="target">
+                                        <rect key="frame" x="100" y="42" width="320" height="500"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="75%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oZB-Ti-w7y">
-                                                <rect key="frame" x="34" y="185" width="37" height="25"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="95%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyB-N7-nR5">
+                                                <rect key="frame" x="34" y="122" width="56" height="38"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="22"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="85%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECV-Bh-wGQ">
-                                                <rect key="frame" x="34" y="147" width="37" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="34" y="183" width="56" height="27"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="22"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="70%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGy-oq-FnD">
-                                                <rect key="frame" x="34" y="234" width="37" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="75%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oZB-Ti-w7y">
+                                                <rect key="frame" x="34" y="235" width="56" height="29"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="22"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="60%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMW-Is-XM5">
-                                                <rect key="frame" x="34" y="271" width="37" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="65%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGy-oq-FnD">
+                                                <rect key="frame" x="34" y="281" width="56" height="29"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="22"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYI-2W-Qbx">
-                                                <rect key="frame" x="197" y="234" width="71" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="55%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMW-Is-XM5">
+                                                <rect key="frame" x="34" y="337" width="56" height="29"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="22"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KoM-6E-6xZ">
-                                                <rect key="frame" x="198" y="108" width="70" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="221" y="126" width="96" height="34"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="22"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ps2-I1-c6v">
+                                                <rect key="frame" x="221" y="183" width="96" height="37"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="22"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="684-Nl-xcX">
-                                                <rect key="frame" x="198" y="189" width="70" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="221" y="231" width="96" height="37"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="22"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYI-2W-Qbx">
+                                                <rect key="frame" x="221" y="277" width="96" height="37"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="22"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eY-ga-dH7">
-                                                <rect key="frame" x="198" y="271" width="70" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="221" y="333" width="96" height="37"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="22"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="00.0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c4b-Rb-6It">
-                                                <rect key="frame" x="96" y="45" width="97" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <rect key="frame" x="107" y="71" width="106" height="30"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="resignKeyBoard:" destination="N97-RK-u95" eventType="editingDidEndOnExit" id="JC7-QQ-meT"/>
+                                                </connections>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ps2-I1-c6v">
-                                                <rect key="frame" x="198" y="147" width="70" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Evm-KZ-uWq">
-                                                <rect key="frame" x="20" y="45" width="65" height="30"/>
+                                                <rect key="frame" x="12" y="72" width="88" height="28"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="18"/>
                                                 <state key="normal" title="New Max">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -111,17 +121,19 @@
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pom-yT-Y9h">
-                                                <rect key="frame" x="96" y="7" width="97" height="30"/>
+                                                <rect key="frame" x="107" y="33" width="106" height="30"/>
                                                 <gestureRecognizers/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
+                                                    <action selector="resignKeyBoard:" destination="N97-RK-u95" eventType="editingDidEndOnExit" id="rhP-rk-GIY"/>
                                                     <outletCollection property="gestureRecognizers" destination="Qcd-gV-DaO" appends="YES" id="hqu-2h-XGD"/>
                                                     <outletCollection property="gestureRecognizers" destination="a97-uk-SJQ" appends="YES" id="zNp-7y-67k"/>
                                                 </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2E6-cj-0kw">
-                                                <rect key="frame" x="207" y="44" width="71" height="30"/>
+                                                <rect key="frame" x="216" y="72" width="101" height="29"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="18"/>
                                                 <state key="normal" title="Undo Max">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -130,8 +142,9 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGq-B4-jRg">
-                                                <rect key="frame" x="201" y="6" width="82" height="30"/>
-                                                <state key="normal" title="Remove Lift">
+                                                <rect key="frame" x="216" y="31" width="101" height="33"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="18"/>
+                                                <state key="normal" title="Delete Lift">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -139,7 +152,7 @@
                                                 </connections>
                                             </button>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="52K-QN-W28">
-                                                <rect key="frame" x="84" y="339" width="121" height="29"/>
+                                                <rect key="frame" x="107" y="403" width="121" height="29"/>
                                                 <segments>
                                                     <segment title="Pounds"/>
                                                     <segment title="Kilos"/>
@@ -148,14 +161,9 @@
                                                     <action selector="ChooseUnits:" destination="N97-RK-u95" eventType="valueChanged" id="lQr-Ny-GuZ"/>
                                                 </connections>
                                             </segmentedControl>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="95%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyB-N7-nR5">
-                                                <rect key="frame" x="34" y="104" width="37" height="29"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8m0-gt-058">
-                                                <rect key="frame" x="20" y="7" width="57" height="30"/>
+                                                <rect key="frame" x="8" y="34" width="87" height="28"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="18"/>
                                                 <state key="normal" title="New Lift">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -166,76 +174,74 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="283" id="hwT-di-3vC"/>
-                                            <constraint firstAttribute="height" constant="402" id="pzH-Sj-0Zb"/>
+                                            <constraint firstAttribute="height" constant="500" id="Z85-vc-SYa"/>
+                                            <constraint firstAttribute="width" constant="320" id="tdD-ir-dYD"/>
                                         </constraints>
                                     </view>
-                                    <view hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sVW-fX-nMi" customClass="GraphView" customModule="XFit_Utility" customModuleProvider="target">
-                                        <rect key="frame" x="161" y="93" width="278" height="329"/>
+                                    <view hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sVW-fX-nMi" customClass="GraphView" customModule="XFit_Utility" customModuleProvider="target">
+                                        <rect key="frame" x="100" y="38" width="320" height="460"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dS6-Dq-eMx">
-                                                <rect key="frame" x="27" y="21" width="93" height="21"/>
-                                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="19"/>
+                                                <rect key="frame" x="22" y="14" width="138" height="41"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="30"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSq-sm-NPM">
-                                                <rect key="frame" x="246" y="270" width="27" height="21"/>
-                                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="19"/>
+                                                <rect key="frame" x="285" y="397" width="35" height="33"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="35"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCO-aw-BwV">
-                                                <rect key="frame" x="208" y="34" width="65" height="21"/>
-                                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="19"/>
+                                                <rect key="frame" x="187" y="14" width="125" height="41"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="33"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="329" id="okf-Pf-Eka"/>
-                                            <constraint firstAttribute="width" constant="278" id="sSR-G0-2xR"/>
+                                            <constraint firstAttribute="height" constant="460" id="I5c-rz-2ic"/>
+                                            <constraint firstAttribute="width" constant="320" id="ZjQ-Jl-Kgz"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="startColor">
-                                                <color key="value" red="1" green="0.78873818126970674" blue="0.63405735344178438" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="endColor">
-                                                <color key="value" red="1" green="0.29460181164422439" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.51365214650000002" green="0.51365214650000002" blue="0.51365214650000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="middleColor">
+                                                <color key="value" red="0.51365214650000002" green="0.2034482781557469" blue="0.18712438143344592" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="centerX" secondItem="sVW-fX-nMi" secondAttribute="centerX" constant="0.5" id="bc2-Yw-74w"/>
-                                    <constraint firstAttribute="centerY" secondItem="sVW-fX-nMi" secondAttribute="centerY" constant="0.5" id="cjM-ru-vbD"/>
-                                    <constraint firstAttribute="centerX" secondItem="DER-iy-2x9" secondAttribute="centerX" id="jti-la-lwh"/>
-                                    <constraint firstAttribute="centerY" secondItem="DER-iy-2x9" secondAttribute="centerY" id="pV5-rd-hp0"/>
+                                    <constraint firstItem="sVW-fX-nMi" firstAttribute="centerX" secondItem="gv9-T8-Cco" secondAttribute="centerX" id="24r-ad-Rn3"/>
+                                    <constraint firstItem="DER-iy-2x9" firstAttribute="centerX" secondItem="gv9-T8-Cco" secondAttribute="centerX" id="MfS-nP-5e3"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="gv9-T8-Cco" firstAttribute="top" secondItem="VbZ-0R-PeI" secondAttribute="top" id="HRb-WR-UNq"/>
-                            <constraint firstItem="gv9-T8-Cco" firstAttribute="centerX" secondItem="VbZ-0R-PeI" secondAttribute="centerX" id="fGj-dS-IlK"/>
-                            <constraint firstItem="gv9-T8-Cco" firstAttribute="bottom" secondItem="gNR-Lu-Gjn" secondAttribute="top" id="uhj-1U-tri"/>
-                            <constraint firstItem="gv9-T8-Cco" firstAttribute="leading" secondItem="VbZ-0R-PeI" secondAttribute="leading" id="yFm-wg-gEh"/>
+                            <constraint firstItem="gv9-T8-Cco" firstAttribute="centerX" secondItem="VbZ-0R-PeI" secondAttribute="centerX" id="zA1-X0-3db"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="t2n-7g-67A" appends="YES" id="NOO-we-j0D"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="yQQ-Vp-bJp"/>
+                    <tabBarItem key="tabBarItem" title="Lifting" image="second" selectedImage="second" id="yQQ-Vp-bJp"/>
                     <connections>
                         <outlet property="LiftName" destination="pom-yT-Y9h" id="HJm-zU-uMC"/>
-                        <outlet property="Max60" destination="Ps2-I1-c6v" id="yXG-nl-57S"/>
-                        <outlet property="Max70" destination="5eY-ga-dH7" id="4mc-Fz-FJ2"/>
+                        <outlet property="Max55" destination="5eY-ga-dH7" id="2vC-xc-MCx"/>
+                        <outlet property="Max65" destination="RYI-2W-Qbx" id="iJ9-g9-uR2"/>
                         <outlet property="Max75" destination="684-Nl-xcX" id="SZf-5Q-B51"/>
-                        <outlet property="Max85" destination="KoM-6E-6xZ" id="S0e-gy-Wdm"/>
-                        <outlet property="Max95" destination="RYI-2W-Qbx" id="5kH-La-1w1"/>
+                        <outlet property="Max85" destination="Ps2-I1-c6v" id="66d-ui-hGn"/>
+                        <outlet property="Max95" destination="KoM-6E-6xZ" id="WDn-wz-Wiu"/>
                         <outlet property="MaxLift" destination="c4b-Rb-6It" id="vxU-Rm-bwH"/>
                         <outlet property="containerView" destination="gv9-T8-Cco" id="Re1-xB-DlE"/>
                         <outlet property="graphView" destination="sVW-fX-nMi" id="9Az-b4-Pm2"/>
@@ -262,9 +268,9 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2149" y="-1447"/>
+            <point key="canvasLocation" x="2289" y="-1461"/>
         </scene>
-        <!--Item-->
+        <!--Timer-->
         <scene sceneID="2Gb-f3-wG2">
             <objects>
                 <viewController id="ahX-52-o2t" customClass="StopWatchController" customModule="XFit_Utility" customModuleProvider="target" sceneMemberID="viewController">
@@ -276,52 +282,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i5b-gP-0oz" userLabel="TimeView">
-                                <rect key="frame" x="150" y="62" width="307" height="110"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5e-Aj-mu7">
-                                        <rect key="frame" x="106" y="15" width="102" height="74"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="80"/>
-                                        <color key="textColor" red="0.75201231059999996" green="0.11557288759999999" blue="0.14327966680000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kzH-kn-CuV">
-                                        <rect key="frame" x="202" y="31" width="12" height="61"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <color key="textColor" red="0.55588735410000001" green="0.57029153759999995" blue="0.75201231059999996" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4RO-8e-is9">
-                                        <rect key="frame" x="209" y="15" width="98" height="74"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="80"/>
-                                        <color key="textColor" red="0.75201231059999996" green="0.11557288759999999" blue="0.14327966680000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Otn-vK-QrV">
-                                        <rect key="frame" x="0.0" y="15" width="98" height="74"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="80"/>
-                                        <color key="textColor" red="0.75201231059999996" green="0.11557288759999999" blue="0.14327966680000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=":" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QbF-44-PuR">
-                                        <rect key="frame" x="97" y="21" width="12" height="61"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <color key="textColor" red="0.55588735410000001" green="0.57029153759999995" blue="0.75201231059999996" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="307" id="0Y9-y9-VJv"/>
-                                    <constraint firstAttribute="height" constant="110" id="hi3-ox-p1f"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s36-gz-1GQ" userLabel="ButtonView">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s36-gz-1GQ" userLabel="ButtonView">
                                 <rect key="frame" x="178" y="354" width="244" height="170"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oA-JH-5Y3" customClass="StartButtonClass" customModule="XFit_Utility" customModuleProvider="target">
-                                        <rect key="frame" x="13" y="8" width="60" height="60"/>
-                                        <state key="normal" title="Start"/>
+                                        <rect key="frame" x="8" y="8" width="80" height="80"/>
+                                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="21"/>
+                                        <state key="normal" title="Start">
+                                            <color key="titleColor" red="1" green="0.29460181159999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isStop" value="NO"/>
                                         </userDefinedRuntimeAttributes>
@@ -330,8 +299,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLp-Vc-KGQ" customClass="StartButtonClass" customModule="XFit_Utility" customModuleProvider="target">
-                                        <rect key="frame" x="171" y="8" width="60" height="60"/>
+                                        <rect key="frame" x="160" y="8" width="80" height="80"/>
+                                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="21"/>
                                         <state key="normal" title="Reset">
+                                            <color key="titleColor" red="1" green="0.29460181159999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -342,8 +313,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YwV-ZK-B9n" customClass="StartButtonClass" customModule="XFit_Utility" customModuleProvider="target">
-                                        <rect key="frame" x="92" y="92" width="60" height="60"/>
+                                        <rect key="frame" x="92" y="86" width="60" height="60"/>
+                                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="16"/>
                                         <state key="normal" title="Tabata">
+                                            <color key="titleColor" red="1" green="0.29460181159999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -358,12 +331,12 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="170" id="2O9-qn-lqh"/>
-                                    <constraint firstAttribute="width" constant="244" id="hwK-bB-YWn"/>
+                                    <constraint firstAttribute="height" constant="170" id="AdU-db-0W2"/>
+                                    <constraint firstAttribute="width" constant="244" id="VtQ-Qb-mLv"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zkq-Em-HJD" userLabel="StepperView">
-                                <rect key="frame" x="162" y="180" width="282" height="152"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zkq-Em-HJD" userLabel="StepperView">
+                                <rect key="frame" x="159" y="178" width="282" height="152"/>
                                 <subviews>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" stepValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4Jr-8S-LXa">
                                         <rect key="frame" x="16" y="103" width="94" height="29"/>
@@ -372,15 +345,9 @@
                                             <action selector="StepperChange:" destination="ahX-52-o2t" eventType="valueChanged" id="4yF-G5-I37"/>
                                         </connections>
                                     </stepper>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time On" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEH-dm-7jC">
-                                        <rect key="frame" x="31" y="8" width="65" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHc-qX-VDG">
-                                        <rect key="frame" x="180" y="51" width="63" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0 min" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHc-qX-VDG">
+                                        <rect key="frame" x="167" y="42" width="91" height="53"/>
+                                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="23"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -390,39 +357,83 @@
                                             <action selector="OffChange:" destination="ahX-52-o2t" eventType="valueChanged" id="ppi-Dr-Iup"/>
                                         </connections>
                                     </stepper>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDw-IA-qar">
-                                        <rect key="frame" x="31" y="50" width="65" height="29"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0 min" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDw-IA-qar">
+                                        <rect key="frame" x="16" y="42" width="94" height="53"/>
+                                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="23"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="highlightedColor" red="0.75201231059999996" green="0.11557288759999999" blue="0.14327966680000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time Off" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Bl-Fp-L0D">
-                                        <rect key="frame" x="177" y="8" width="66" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="154" y="0.0" width="115" height="29"/>
+                                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="27"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time On" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEH-dm-7jC">
+                                        <rect key="frame" x="6" y="0.0" width="114" height="29"/>
+                                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="27"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="152" id="1un-6U-FLU"/>
-                                    <constraint firstAttribute="width" constant="282" id="AFj-Td-2rl"/>
+                                    <constraint firstAttribute="height" constant="152" id="FPG-yw-0WO"/>
+                                    <constraint firstAttribute="width" constant="282" id="gwA-lz-t5L"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i5b-gP-0oz" userLabel="TimeView">
+                                <rect key="frame" x="133" y="60" width="334" height="110"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kzH-kn-CuV">
+                                        <rect key="frame" x="222" y="24" width="12" height="61"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <color key="textColor" red="0.55588735410000001" green="0.57029153759999995" blue="0.75201231059999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4RO-8e-is9">
+                                        <rect key="frame" x="228" y="17" width="98" height="75"/>
+                                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="80"/>
+                                        <color key="textColor" red="0.75201231059999996" green="0.11557288759999999" blue="0.14327966680000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=":" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QbF-44-PuR">
+                                        <rect key="frame" x="112" y="18" width="12" height="61"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <color key="textColor" red="0.55588735410000001" green="0.57029153759999995" blue="0.75201231059999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Otn-vK-QrV">
+                                        <rect key="frame" x="15" y="18" width="98" height="74"/>
+                                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="80"/>
+                                        <color key="textColor" red="0.75201231059999996" green="0.11557288759999999" blue="0.14327966680000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5e-Aj-mu7">
+                                        <rect key="frame" x="121" y="18" width="102" height="74"/>
+                                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="80"/>
+                                        <color key="textColor" red="0.75201231059999996" green="0.11557288759999999" blue="0.14327966680000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="VrR-zT-rav"/>
+                                    <constraint firstAttribute="width" constant="334" id="krg-Kw-ajN"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="i5b-gP-0oz" secondAttribute="centerY" constant="183" id="7ad-XF-z3J"/>
-                            <constraint firstAttribute="centerX" secondItem="s36-gz-1GQ" secondAttribute="centerX" id="BLk-xj-GTB"/>
-                            <constraint firstAttribute="centerX" secondItem="i5b-gP-0oz" secondAttribute="centerX" constant="-3.5" id="CjZ-hB-se6"/>
-                            <constraint firstAttribute="centerY" secondItem="s36-gz-1GQ" secondAttribute="centerY" constant="-139" id="Fxv-B3-eul"/>
-                            <constraint firstAttribute="centerY" secondItem="zkq-Em-HJD" secondAttribute="centerY" constant="44" id="QhH-aw-8RN"/>
-                            <constraint firstAttribute="centerX" secondItem="zkq-Em-HJD" secondAttribute="centerX" constant="-3" id="YJn-Bu-yyW"/>
+                            <constraint firstItem="i5b-gP-0oz" firstAttribute="centerX" secondItem="YYk-ZI-cXR" secondAttribute="centerX" id="Mgx-js-Eqb"/>
+                            <constraint firstItem="s36-gz-1GQ" firstAttribute="centerX" secondItem="YYk-ZI-cXR" secondAttribute="centerX" id="cnt-5c-4yE"/>
+                            <constraint firstItem="zkq-Em-HJD" firstAttribute="centerX" secondItem="YYk-ZI-cXR" secondAttribute="centerX" id="sjd-8B-ynL"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="ZRg-UI-Ai2"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Timer" image="first" selectedImage="first" id="ZRg-UI-Ai2"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="ButtonView" destination="s36-gz-1GQ" id="Cyh-t9-FTR"/>
                         <outlet property="IntervalLabel" destination="cDw-IA-qar" id="OO3-RR-v9i"/>
                         <outlet property="IntervalValue" destination="4Jr-8S-LXa" id="rg4-8B-dc0"/>
                         <outlet property="Micros" destination="4RO-8e-is9" id="Saz-FN-o2Z"/>
@@ -431,14 +442,20 @@
                         <outlet property="OffValue" destination="3x1-Px-LWD" id="Bbk-4a-FY2"/>
                         <outlet property="Seconds" destination="A5e-Aj-mu7" id="urL-JR-hWp"/>
                         <outlet property="StartStop" destination="2oA-JH-5Y3" id="GyV-N2-fEI"/>
+                        <outlet property="StepperView" destination="zkq-Em-HJD" id="Q3X-GL-SG3"/>
                         <outlet property="TabataButton" destination="YwV-ZK-B9n" id="HEG-V9-2tv"/>
                         <outlet property="TimeOff" destination="5Bl-Fp-L0D" id="tBH-aw-Okb"/>
                         <outlet property="TimeOn" destination="bEH-dm-7jC" id="y47-kC-QxS"/>
+                        <outlet property="TimeView" destination="i5b-gP-0oz" id="5H0-Sy-Ceq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VQL-74-9w7" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2041" y="-1452"/>
+            <point key="canvasLocation" x="2289" y="-1369"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="first" width="30" height="30"/>
+        <image name="second" width="30" height="30"/>
+    </resources>
 </document>

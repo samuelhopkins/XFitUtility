@@ -16,8 +16,8 @@ class StartButtonClass: UIButton {
     
     
     override func drawRect(rect: CGRect) {
-        var path = UIBezierPath(ovalInRect: rect)
-        UIColor.redColor().setFill()
+        let path = UIBezierPath(ovalInRect: rect)
+        UIColor.whiteColor().setFill()
         path.fill()
     }
     
