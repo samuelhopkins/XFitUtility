@@ -66,8 +66,9 @@ import UIKit
         let bottomBorder:CGFloat = 50
         let graphHeight = height - topBorder - bottomBorder
         let maxValue = samplePoints.maxElement()
+        let minValue = samplePoints.minElement()
         let columnYPoint = { (graphPoint:Double) -> CGFloat in
-            var y:CGFloat = CGFloat(graphPoint) / CGFloat(maxValue!) * graphHeight
+            var y:CGFloat = (CGFloat(graphPoint) - CGFloat(minValue!)) / (CGFloat(maxValue!) - CGFloat(minValue!)) * graphHeight
         y = graphHeight + topBorder - y
         return y
         }

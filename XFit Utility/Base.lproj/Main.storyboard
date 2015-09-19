@@ -184,18 +184,18 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dS6-Dq-eMx">
                                                 <rect key="frame" x="22" y="14" width="138" height="41"/>
                                                 <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="30"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSq-sm-NPM">
-                                                <rect key="frame" x="285" y="397" width="35" height="33"/>
-                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="35"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCO-aw-BwV">
                                                 <rect key="frame" x="187" y="14" width="125" height="41"/>
-                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="33"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="28"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSq-sm-NPM">
+                                                <rect key="frame" x="187" y="397" width="125" height="33"/>
+                                                <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="28"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -247,6 +247,7 @@
                         <outlet property="graphView" destination="sVW-fX-nMi" id="9Az-b4-Pm2"/>
                         <outlet property="lifterView" destination="DER-iy-2x9" id="ESQ-PW-iyJ"/>
                         <outlet property="maxPlottedLift" destination="nCO-aw-BwV" id="hDA-Cl-Pmr"/>
+                        <outlet property="minPlottedLift" destination="nSq-sm-NPM" id="BCO-Ef-wr9"/>
                         <outlet property="plottedLift" destination="dS6-Dq-eMx" id="sKl-1f-Mtt"/>
                         <outlet property="unitsSegmentedControl" destination="52K-QN-W28" id="e28-fE-Gka"/>
                     </connections>
@@ -268,7 +269,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2289" y="-1461"/>
+            <point key="canvasLocation" x="2030" y="-1257"/>
         </scene>
         <!--Timer-->
         <scene sceneID="2Gb-f3-wG2">

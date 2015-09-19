@@ -48,7 +48,7 @@ class LifterController: UIViewController, UITextFieldDelegate  {
         let point = touch.locationInView(graphView)
         for i in 0..<graphView.pointsArray.count {
                 let graphPoint = graphView.pointsArray[i]
-            if (point.x > graphPoint.x - 10) && (point.x < graphPoint.x + 10){
+            if (point.x > graphPoint.x - 25) && (point.x < graphPoint.x + 25){
                 if !(labels.isEmpty){
                     for weightLabel in labels{
                         weightLabel.removeFromSuperview()
@@ -87,6 +87,7 @@ class LifterController: UIViewController, UITextFieldDelegate  {
         @IBOutlet weak var plottedLift: UILabel!
     @IBOutlet weak var maxPlottedLift: UILabel!
     
+    @IBOutlet weak var minPlottedLift: UILabel!
     @IBAction func LiftSwipeRight(sender: UISwipeGestureRecognizer) {
         let liftsSize = Lifts.count
         if (liftIndex < liftsSize - 1)
@@ -280,7 +281,15 @@ class LifterController: UIViewController, UITextFieldDelegate  {
         {
         graphView.samplePoints = maxWeights.map(scalerMultiplier(pounds))
         graphView.setNeedsDisplay()
-        maxPlottedLift.text = String(format: "%.2f", graphView.samplePoints.maxElement()!)
+            var units : String = ""
+            if (pounds == 1.0){
+                 units = "lb"
+            }
+            else{
+                 units = "kg"
+            }
+        maxPlottedLift.text = String(format: "%.2f", graphView.samplePoints.maxElement()!) + units
+        minPlottedLift.text = String(format: "%.2f", graphView.samplePoints.minElement()!) + units
         plottedLift.text = "\(lift)"
             
         }
