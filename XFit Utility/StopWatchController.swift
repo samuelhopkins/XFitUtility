@@ -50,12 +50,16 @@ class StopWatchController: UIViewController {
     @IBOutlet weak var TabataButton: StartButtonClass!
     @IBOutlet weak var TimeOff: UILabel!
     
+    @IBOutlet weak var CountDownView: UIView!
+    @IBOutlet weak var CountDownLabel: UILabel!
     @IBOutlet weak var TimeView: UIView!
     @IBOutlet weak var StepperView: UIView!
     @IBOutlet weak var ButtonView: UIView!
     @IBOutlet weak var TimeOnSlider: UISlider!
     
     var Timer:NSTimer = NSTimer()
+    var CountDownTimer:NSTimer = NSTimer()
+    var CountDown:Int = 11
     var started = false
     var offBool = false
     var tabata = false
@@ -71,6 +75,7 @@ class StopWatchController: UIViewController {
     var offTotal = 0
     let myBlue = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1.0)
     let myDarkerBlue = UIColor(red: 150/255, green: 122/255, blue: 255/255, alpha: 1.0)
+    
     @IBAction func Reset(sender: AnyObject) {
         Timer.invalidate()
         MicroCounter=0
@@ -83,45 +88,98 @@ class StopWatchController: UIViewController {
         StartStop.setTitle("Start", forState: .Normal)
         StartStop.isStop = false
         TimeOn.textColor = UIColor.whiteColor()
+        TimeOff.textColor = UIColor.whiteColor()
+        self.view.backgroundColor = UIColor.blackColor()
+        Micros.textColor = MyRed
+        Seconds.textColor = MyRed
+        Minutes.textColor = MyRed
+        IntervalValue.tintColor = myBlue
+        OffValue.tintColor = myBlue
+        StepperView.backgroundColor = UIColor.blackColor()
+        TimeView.backgroundColor = UIColor.blackColor()
+        ButtonView.backgroundColor = UIColor.blackColor()
     }
     
-    @IBAction func StartOrStop(sender: AnyObject) {
-        print(StartStop.isStop)
-        if (StartStop.isStop == false){
-        if (!started){
+    func StartTimer() {
+            if TimeOff.textColor == UIColor.whiteColor(){
             TimeOn.textColor = myBlue
+        }
         Timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("UpdateTimer"), userInfo: nil, repeats: true)
-        started = true
             StartStop.isStop = true
             StartStop.setTitle("Stop", forState: .Normal)
-        }
-        }
-        else{
-            Timer.invalidate()
-            started = false
-            tabata = false
-            StartStop.setTitle("Start", forState: .Normal)
-            StartStop.isStop = false
- 
-        }
     }
     
     
-    @IBAction func StartTabata(sender: StartButtonClass) {
-        if !(started){
-            
+    func StartTabata() {
         Interval = 0.2
         Off = 0.1
         IntervalLabel.text = String(format: "%dsec", 20)
             OffLabel.text = String(format: "%dsec", 10)
         TimeOn.textColor = myBlue
+        AudioServicesPlayAlertSound(1023)
         Timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("UpdateTimer"), userInfo: nil, repeats: true)
         started = true
         StartStop.isStop = true
         StartStop.setTitle("Stop", forState: .Normal)
-        }
     }
     
+    @IBAction func StartTabataCountDown(sender: StartButtonClass){
+        if (StartStop.isStop == false){
+        if !(started){
+            if sender.isTabata{
+                tabata = true
+            }
+        MinuteCounter = 0
+        SecondCounter = 0
+        MicroCounter = 0
+        Minutes.text = String(format: "%02.0f", MinuteCounter)
+        Seconds.text = String(format: "%02d", SecondCounter)
+        Micros.text = String(format: "%02d", MicroCounter)
+        CountDownView.hidden = false
+        started = true
+        CountDownTimer = NSTimer.scheduledTimerWithTimeInterval(0.50, target: self, selector: Selector("UpdateCountDownTimer"), userInfo: nil, repeats: true)
+        }
+        }
+        else{
+            Timer.invalidate()
+            started = false
+            CountDown = 11
+            EvenOdd = false
+            StartStop.setTitle("Start", forState: .Normal)
+            StartStop.isStop = false
+            tabata = false
+            
+        }
+
+    }
+    
+    var EvenOdd: Bool = false
+    
+    func UpdateCountDownTimer(){
+        if !(EvenOdd){
+        EvenOdd = !EvenOdd
+        --CountDown
+        CountDownLabel.text = String(format: "%d", CountDown)
+        print(CountDown)
+        if CountDown == 0{
+            CountDownTimer.invalidate()
+            CountDownView.hidden = true
+            if tabata{
+            StartTabata()
+            }
+            else{
+            StartTimer()
+            }
+        }
+        else if CountDown < 6{
+            AudioServicesPlayAlertSound(1022)
+        }
+        }
+        else{
+          EvenOdd = !EvenOdd
+          CountDownLabel.text = nil
+        }
+    }
     
     func UpdateTimer(){
         if (tabata){
@@ -182,7 +240,6 @@ class StopWatchController: UIViewController {
     }
     
     @IBAction func StepperChange(sender: UIStepper) {
-        
         let TimeOnVal = Int(sender.value)
         let minutes : Int = TimeOnVal / 60
         let Seconds = TimeOnVal
@@ -254,6 +311,7 @@ class StopWatchController: UIViewController {
     func IntervalSound(value: Float){
         print("Interval sound value is ",value)
         print ("Interval is", Interval)
+        print(offBool)
         if (offBool)
         {
             offDiffSeconds += 0.1

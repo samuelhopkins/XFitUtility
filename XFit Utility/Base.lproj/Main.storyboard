@@ -296,7 +296,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isStop" value="NO"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="StartOrStop:" destination="ahX-52-o2t" eventType="touchUpInside" id="9Ur-pc-Ua2"/>
+                                            <action selector="StartTabataCountDown:" destination="ahX-52-o2t" eventType="touchUpInside" id="fqb-5A-GLx"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLp-Vc-KGQ" customClass="StartButtonClass" customModule="XFit_Utility" customModuleProvider="target">
@@ -326,7 +326,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isStop" value="NO"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="StartTabata:" destination="ahX-52-o2t" eventType="touchUpInside" id="425-j1-k55"/>
+                                            <action selector="StartTabataCountDown:" destination="ahX-52-o2t" eventType="touchUpInside" id="nq3-Id-Qgj"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -423,10 +423,30 @@
                                     <constraint firstAttribute="width" constant="334" id="krg-Kw-ajN"/>
                                 </constraints>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xH8-He-PqJ" userLabel="CountDownView">
+                                <rect key="frame" x="65" y="38" width="470" height="486"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.81999999999999995" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYO-oB-USe">
+                                        <rect key="frame" x="99" y="107" width="273" height="272"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="126"/>
+                                        <color key="textColor" red="1" green="0.092164921250000004" blue="0.042981151859999997" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                        <color key="highlightedColor" red="0.23968197601010099" green="0.20900129954950145" blue="0.22359129591393043" alpha="0.82000000000000006" colorSpace="calibratedRGB"/>
+                                        <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.82000000000000006" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="486" id="u22-9q-U8F"/>
+                                    <constraint firstAttribute="width" constant="470" id="yXE-GN-cTU"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="i5b-gP-0oz" firstAttribute="centerX" secondItem="YYk-ZI-cXR" secondAttribute="centerX" id="Mgx-js-Eqb"/>
+                            <constraint firstItem="xH8-He-PqJ" firstAttribute="centerX" secondItem="YYk-ZI-cXR" secondAttribute="centerX" id="cHN-Tr-L0b"/>
                             <constraint firstItem="s36-gz-1GQ" firstAttribute="centerX" secondItem="YYk-ZI-cXR" secondAttribute="centerX" id="cnt-5c-4yE"/>
                             <constraint firstItem="zkq-Em-HJD" firstAttribute="centerX" secondItem="YYk-ZI-cXR" secondAttribute="centerX" id="sjd-8B-ynL"/>
                         </constraints>
@@ -435,6 +455,8 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="ButtonView" destination="s36-gz-1GQ" id="Cyh-t9-FTR"/>
+                        <outlet property="CountDownLabel" destination="HYO-oB-USe" id="ZhS-qP-Hxu"/>
+                        <outlet property="CountDownView" destination="xH8-He-PqJ" id="maq-GM-1v5"/>
                         <outlet property="IntervalLabel" destination="cDw-IA-qar" id="OO3-RR-v9i"/>
                         <outlet property="IntervalValue" destination="4Jr-8S-LXa" id="rg4-8B-dc0"/>
                         <outlet property="Micros" destination="4RO-8e-is9" id="Saz-FN-o2Z"/>
