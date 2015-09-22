@@ -14,10 +14,10 @@ class StopWatchController: UIViewController {
     override func viewDidLoad() {
         IntervalValue.wraps = true
         IntervalValue.autorepeat = true
-        IntervalValue.maximumValue = 20
+        IntervalValue.maximumValue = 600
         OffValue.wraps = true
         OffValue.autorepeat = true
-        OffValue.maximumValue = 20
+        OffValue.maximumValue = 600
         Micros.text=String(format:"%02d",MicroCounter)
         Seconds.text=String(format: "%02d",SecondCounter)
         Minutes.text=String(format: "%02d",MinuteCounter)
@@ -53,6 +53,7 @@ class StopWatchController: UIViewController {
     @IBOutlet weak var TimeView: UIView!
     @IBOutlet weak var StepperView: UIView!
     @IBOutlet weak var ButtonView: UIView!
+    @IBOutlet weak var TimeOnSlider: UISlider!
     
     var Timer:NSTimer = NSTimer()
     var started = false
@@ -107,9 +108,13 @@ class StopWatchController: UIViewController {
     
     
     @IBAction func StartTabata(sender: StartButtonClass) {
-        if !(started || tabata){
-        tabata = true
-        TimeOn.textColor = UIColor.whiteColor()
+        if !(started){
+            
+        Interval = 0.2
+        Off = 0.1
+        IntervalLabel.text = String(format: "%dsec", 20)
+            OffLabel.text = String(format: "%dsec", 10)
+        TimeOn.textColor = myBlue
         Timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("UpdateTimer"), userInfo: nil, repeats: true)
         started = true
         StartStop.isStop = true
@@ -161,9 +166,12 @@ class StopWatchController: UIViewController {
            
             IntervalSound(MinuteCounter)
             }
-            else if(SecondCounter % 30 == 0)
+            else if(SecondCounter % 10 == 0)
            {
-            IntervalSound(MinuteCounter + 0.5)
+            print("mod 10")
+            print(SecondCounter)
+            print(Float(Float(SecondCounter) / 100))
+            IntervalSound(MinuteCounter + Float(Float(SecondCounter) / 100))
             }
             }
         else{
@@ -174,15 +182,39 @@ class StopWatchController: UIViewController {
     }
     
     @IBAction func StepperChange(sender: UIStepper) {
-        let sentVal = Float(sender.value)
-        IntervalLabel.text = String(format: "%.1f", sentVal) + "min"
-        Interval = sentVal
+        
+        let TimeOnVal = Int(sender.value)
+        let minutes : Int = TimeOnVal / 60
+        let Seconds = TimeOnVal
+        if minutes == 0{
+            IntervalLabel.text = String(format: "%d", Seconds) + "sec"
+            Interval = Float(Float(TimeOnVal) / 100)
+        }
+        else{
+            let Seconds = Seconds - (minutes * 60)
+            IntervalLabel.text = String(format: "%dmin %dsec", minutes, Seconds)
+            Interval = Float(minutes) + Float(Float(Seconds) / 100)
+        }
+        
     }
     
+    
+    
     @IBAction func OffChange(sender: UIStepper) {
-        let sent = Float(sender.value)
-        OffLabel.text = String(format: "%.1f", sent) + "min"
-        Off = sent
+        let TimeOffVal = Int(sender.value)
+        print(TimeOffVal)
+        let minutes : Int = TimeOffVal / 60
+        let Seconds = TimeOffVal
+        if minutes == 0{
+            OffLabel.text = String(format: "%d", Seconds) + "sec"
+            Off = Float(Float(TimeOffVal) / 100)
+        }
+        else{
+            let Seconds = Seconds - (minutes * 60)
+            OffLabel.text = String(format: "%dmin %dsec", minutes, Seconds)
+            Off = Float(minutes) + Float(Float(Seconds) / 100)
+        }
+
     }
     
     func TabataIntervalSound(){
@@ -217,14 +249,24 @@ class StopWatchController: UIViewController {
             ButtonView.backgroundColor = UIColor.blackColor()
                    }
     }
+    var offDiffSeconds : Float = 0
     
     func IntervalSound(value: Float){
+        print("Interval sound value is ",value)
+        print ("Interval is", Interval)
         if (offBool)
         {
-            offDiff += 0.5
+            offDiffSeconds += 0.1
+            offDiff += 0.1
+            if offDiffSeconds == 0.6{
+                offDiff += 0.4
+                offDiffSeconds = 0
+                
+            }
             if (offDiff == Off)
             {
                 offDiff = 0
+                offDiffSeconds = 0
                 offBool = false
                 
                 AudioServicesPlayAlertSound(1023)
@@ -232,9 +274,12 @@ class StopWatchController: UIViewController {
                         }
         }
         
-        else if (Interval > 0)
+        else if (Interval > 0.0)
         {
-            if (value % Interval == 0)
+            print("Interval mod is",Int(100*value) % Int(100*Interval))
+            print(value*100)
+            print(Interval*100)
+            if (Int(100*value) % Int(100*Interval) == 0.0)
             {
         AudioServicesPlayAlertSound(1023)
                
