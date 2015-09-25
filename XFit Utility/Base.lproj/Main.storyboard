@@ -14,6 +14,8 @@
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.81999999999999995" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="ahX-52-o2t" kind="relationship" relationship="viewControllers" id="r9y-Qe-bUF"/>
@@ -200,6 +202,16 @@
                                                     <action selector="NewLiftButton:" destination="N97-RK-u95" eventType="touchUpInside" id="0Ik-HU-pE9"/>
                                                 </connections>
                                             </button>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="52K-QN-W28">
+                                                <rect key="frame" x="100" y="387" width="121" height="29"/>
+                                                <segments>
+                                                    <segment title="Pounds"/>
+                                                    <segment title="Kilos"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="ChooseUnits:" destination="N97-RK-u95" eventType="valueChanged" id="lQr-Ny-GuZ"/>
+                                                </connections>
+                                            </segmentedControl>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -207,16 +219,6 @@
                                             <constraint firstAttribute="width" constant="320" id="tdD-ir-dYD"/>
                                         </constraints>
                                     </view>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="52K-QN-W28">
-                                        <rect key="frame" x="200" y="445" width="121" height="29"/>
-                                        <segments>
-                                            <segment title="Pounds"/>
-                                            <segment title="Kilos"/>
-                                        </segments>
-                                        <connections>
-                                            <action selector="ChooseUnits:" destination="N97-RK-u95" eventType="valueChanged" id="lQr-Ny-GuZ"/>
-                                        </connections>
-                                    </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -269,7 +271,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2410" y="-1375"/>
+            <point key="canvasLocation" x="2263" y="-1706"/>
         </scene>
         <!--Timer-->
         <scene sceneID="2Gb-f3-wG2">
@@ -474,7 +476,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VQL-74-9w7" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2171" y="-1822"/>
+            <point key="canvasLocation" x="2263" y="-1074"/>
         </scene>
     </scenes>
     <resources>

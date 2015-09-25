@@ -18,6 +18,7 @@
 		F645B6DF1B8CE3C20047F1B2 /* Air Horn-SoundBible.com-964603082.wav in Resources */ = {isa = PBXBuildFile; fileRef = F645B6DE1B8CE3C20047F1B2 /* Air Horn-SoundBible.com-964603082.wav */; };
 		F6474F301B8EA360008BBED3 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6474F2F1B8EA360008BBED3 /* GraphView.swift */; };
 		F6474F321B8EAE34008BBED3 /* LifterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6474F311B8EAE34008BBED3 /* LifterView.swift */; };
+		F6764A121BB2222200480024 /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = F6764A111BB2222200480024 /* beep.wav */; settings = {ASSET_TAGS = (); }; };
 		F69DBDDE1BA9443F002075C3 /* StartButtonClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69DBDDD1BA9443F002075C3 /* StartButtonClass.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		F645B6DE1B8CE3C20047F1B2 /* Air Horn-SoundBible.com-964603082.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Air Horn-SoundBible.com-964603082.wav"; sourceTree = "<group>"; };
 		F6474F2F1B8EA360008BBED3 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		F6474F311B8EAE34008BBED3 /* LifterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LifterView.swift; sourceTree = "<group>"; };
+		F6764A111BB2222200480024 /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beep.wav; sourceTree = "<group>"; };
 		F69DBDDD1BA9443F002075C3 /* StartButtonClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartButtonClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +109,7 @@
 		F645B6B81B8CE0DF0047F1B2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F6764A111BB2222200480024 /* beep.wav */,
 				F645B6DE1B8CE3C20047F1B2 /* Air Horn-SoundBible.com-964603082.wav */,
 				F645B6B91B8CE0DF0047F1B2 /* Info.plist */,
 			);
@@ -212,6 +215,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6764A121BB2222200480024 /* beep.wav in Resources */,
 				F645B6DF1B8CE3C20047F1B2 /* Air Horn-SoundBible.com-964603082.wav in Resources */,
 				F645B6C21B8CE0DF0047F1B2 /* Main.storyboard in Resources */,
 				F645B6C71B8CE0DF0047F1B2 /* LaunchScreen.xib in Resources */,

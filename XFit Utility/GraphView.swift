@@ -24,7 +24,7 @@ import UIKit
         //set up background clipping area
         let path = UIBezierPath(roundedRect: rect,
             byRoundingCorners: UIRectCorner.AllCorners,
-            cornerRadii: CGSize(width: 8.0, height: 8.0))
+            cornerRadii: CGSize(width: 0.0, height: 0.0))
         path.addClip()
         
         //2 - get the current context
@@ -120,19 +120,19 @@ import UIKit
         CGContextRestoreGState(context)
         
         //draw the line on top of the clipped gradient
-        graphPath.lineWidth = 2.0
+        graphPath.lineWidth = 4.0
         graphPath.stroke()
         
         //Draw the circles on top of graph stroke
         for i in 0..<samplePoints.count {
             var point = CGPoint(x:columnXPoint(i), y:columnYPoint(samplePoints[i]))
             pointsArray.append(point)
-            point.x -= 5.0/2
-            point.y -= 5.0/2
+            point.x -= 5
+            point.y -= 5
             
             let circle = UIBezierPath(ovalInRect:
                 CGRect(origin: point,
-                    size: CGSize(width: 5.0, height: 5.0)))
+                    size: CGSize(width: 10.0, height: 10.0)))
             circle.fill()
         }
         

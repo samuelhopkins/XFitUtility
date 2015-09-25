@@ -58,7 +58,7 @@ class LifterController: UIViewController, UITextFieldDelegate  {
                 let label = UILabel(frame: CGRectMake(0, 0, 150, 21))
                 label.center = CGPointMake(graphPoint.x + 20, graphPoint.y + 20)
                 label.textAlignment = NSTextAlignment.Center
-                label.textColor = UIColor.blackColor()
+                label.textColor = UIColor.whiteColor()
                 label.font = UIFont(name: "Kailasa", size: 20)
                 label.text = String(format: "%.2f", graphView.samplePoints[i] * pounds)
                 graphView.addSubview(label)
